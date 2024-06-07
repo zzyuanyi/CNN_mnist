@@ -1388,19 +1388,19 @@ int main()
 	vector<Mat> testdata_label;
 	cout << "读取训练数据标签\n";
 	//读取训练数据标签
-	traindata_label = read_Lable_to_Mat("C:\\Users\\yuanyi\\Desktop\\MNIST\\train-labels.idx1-ubyte");
+	traindata_label = read_Lable_to_Mat("mnist-train-label-address");
 	cout << "读取训练数据标签完成\n";
 	cout << "读取训练数据\n";
 	//读取训练数据
-	traindata_list = read_Img_to_Mat("C:\\Users\\yuanyi\\Desktop\\MNIST\\train-images.idx3-ubyte");
+	traindata_list = read_Img_to_Mat("mnist-train-data-address");
 	cout << "训练数据读取完成\n";
 	cout << "读取测试数据标签\n";
 	//读取测试数据标签
-	testdata_label = read_Lable_to_Mat("C:\\Users\\yuanyi\\Desktop\\MNIST\\t10k-labels.idx1-ubyte");
+	testdata_label = read_Lable_to_Mat("mnist-test-label-address");
 	cout << "读取测试数据标签完成\n";
 	cout << "读取测试数据\n";
 	//读取测试数据
-	testdata_list = read_Img_to_Mat("C:\\Users\\yuanyi\\Desktop\\MNIST\\t10k-images.idx3-ubyte");
+	testdata_list = read_Img_to_Mat("mnist-test-data-address");
 	cout << "读取测试数据完成\n";
 	//for (int i = 0; i < traindata_label.size(); i++)
 	//{
@@ -1507,7 +1507,7 @@ int main()
 				cnnsetup(cnn, row, col, outSize);   //cnn初始化
 				cout << "模型初始化完成\n";
 				cout << "模型正在加载参数\n";
-				config_cnn_para("C:\\Users\\yuanyi\\Desktop\\para.txt", cnn);
+				config_cnn_para("The address of a file defined by you with a .txt extension", cnn);
 				cout << "模型加载参数完成\n";
 				signal++;
 			}
@@ -1525,7 +1525,7 @@ int main()
 			else
 			{
 				cout << "开始保存模型参数\n";
-				save_cnn_para("C:\\Users\\yuanyi\\Desktop\\para.txt", cnn);
+				save_cnn_para("The address of a file defined by you with a .txt extension", cnn);
 				cout << "模型参数保存完毕\n";
 			}
 		}
